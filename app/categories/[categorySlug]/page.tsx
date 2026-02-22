@@ -4,13 +4,22 @@ import Card from '@/components/ui/Card'
 
 export async function generateStaticParams() {
   const categories = getAllCategories()
-  // 空の配列の場合は空配列を返す（静的エクスポート時のエラーを防ぐ）
+  
+  // 空の配列の場合は空配列を返す
   if (categories.length === 0) {
     return []
   }
-  return categories.map((category) => ({
-    categorySlug: category.slug,
-  }))
+  
+  // slugをトリムし、空のslugをフィルタリング
+  return categories
+    .map((category) => {
+      const slug = (category?.slug ?? '').trim()
+      return { categorySlug: slug }
+    })
+    .filter((param) => {
+      // 空文字列、undefined、空白のみのslugを除外
+      return param.categorySlug.length > 0 && param.categorySlug.trim().length > 0
+    })
 }
 
 export default function CategoryPage({
