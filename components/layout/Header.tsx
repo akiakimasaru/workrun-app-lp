@@ -16,7 +16,7 @@ export default function Header() {
               アプリ一覧
             </Link>
             <Link
-              href="/categories"
+              href="/category-list"
               className="text-gray-700 hover:text-gray-900 text-sm font-medium"
             >
               カテゴリ

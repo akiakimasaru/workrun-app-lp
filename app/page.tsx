@@ -13,7 +13,7 @@ export default function Home() {
         </p>
         <nav className="flex flex-col sm:flex-row gap-4">
           <Button href="/apps">アプリ一覧</Button>
-          <Button href="/categories" variant="secondary">
+          <Button href="/category-list" variant="secondary">
             カテゴリ一覧
           </Button>
         </nav>
