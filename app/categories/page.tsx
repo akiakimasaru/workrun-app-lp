@@ -1,7 +1,7 @@
 import { getAllCategories } from '@/lib/content'
 import Card from '@/components/ui/Card'
 
-export default function CategoryListPage() {
+export default function CategoriesPage() {
   const categories = getAllCategories()
 
   return (
