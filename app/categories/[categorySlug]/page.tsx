@@ -4,6 +4,10 @@ import Card from '@/components/ui/Card'
 
 export async function generateStaticParams() {
   const categories = getAllCategories()
+  // 空の配列の場合は空配列を返す（静的エクスポート時のエラーを防ぐ）
+  if (categories.length === 0) {
+    return []
+  }
   return categories.map((category) => ({
     categorySlug: category.slug,
   }))

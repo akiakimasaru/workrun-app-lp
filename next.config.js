@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Vercelでは通常のNext.jsビルドを使用
-  // output: 'export' を設定しないことで、通常のSSG/SSRモードで動作
+  // output プロパティを設定しない = 通常のSSG/SSRモード
   images: {
     unoptimized: true,
   },
